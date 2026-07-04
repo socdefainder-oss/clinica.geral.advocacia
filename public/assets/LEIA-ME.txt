@@ -1,0 +1,20 @@
+PASTA DE IMAGENS
+================
+
+Coloque aqui as fotos usadas na landing page.
+
+>>> FOTO DOS RESPONSÁVEIS JURÍDICOS <<<
+Salve a foto enviada (o casal de responsáveis) neste caminho, com este nome exato:
+
+    public/assets/responsaveis-juridicos.jpg
+
+Essa imagem é usada na seção "Conheça os responsáveis jurídicos".
+O componente usa a MESMA foto em dupla nos dois cards, enquadrando
+o lado esquerdo (1º card) e o lado direito (2º card) automaticamente.
+
+Se preferir fotos individuais:
+1. Salve cada foto aqui (ex.: responsavel-1.jpg, responsavel-2.jpg).
+2. Edite o arquivo  src/data/legalTeam.js  e troque o campo "photo".
+
+Enquanto a imagem não existir, o site mostra automaticamente um
+placeholder elegante com as iniciais do responsável (não quebra o layout).
