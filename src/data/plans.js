@@ -34,7 +34,7 @@ export const plans = [
     price: 'R$ 599',
     period: '/mês',
     description: 'Suporte jurídico essencial para pequenas empresas.',
-    highlight: null,
+    highlight: 'Mais recomendado para empresas em crescimento',
     cta: 'Contratar plano empresarial',
     benefits: [
       { label: 'Consultas jurídicas', value: 'Ilimitado' },
@@ -56,7 +56,7 @@ export const plans = [
     price: 'R$ 1.999',
     period: '/mês',
     description: 'Estrutura jurídica para empresas em crescimento.',
-    highlight: 'Mais recomendado para empresas em crescimento',
+    highlight: null,
     cta: 'Escolher plano gestão',
     benefits: [
       { label: 'Consultas jurídicas', value: 'Ilimitado' },

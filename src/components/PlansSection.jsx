@@ -6,7 +6,7 @@ import Reveal from './Reveal'
 
 // Card individual de plano.
 function PlanCard({ plan, index }) {
-  const featured = plan.id === 'empresarial-gestao'
+  const featured = plan.id === 'empresarial-essencial'
   const premium = plan.id === 'empresarial-premium'
 
   return (
