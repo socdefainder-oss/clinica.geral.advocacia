@@ -4,8 +4,8 @@
 
 export const siteConfig = {
   brand: 'Clínica Geral da Advocacia',
-  // Link do WhatsApp (placeholder). Troque pelo número real no formato 55 + DDD + número.
-  whatsapp: 'https://wa.me/5500000000000',
+  // Link do WhatsApp. Número: +55 21 98167-1308
+  whatsapp: 'https://wa.me/5521981671308',
   whatsappMessage:
     'Olá! Vim pela página da Clínica Geral da Advocacia e quero saber mais sobre os planos.',
 }
