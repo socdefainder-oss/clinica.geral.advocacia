@@ -10,10 +10,14 @@ export const siteConfig = {
     'Olá! Vim pela página da Clínica Geral da Advocacia e quero saber mais sobre os planos.',
 }
 
-// Monta o link do WhatsApp com mensagem pré-preenchida.
-export const whatsappLink = `${siteConfig.whatsapp}?text=${encodeURIComponent(
-  siteConfig.whatsappMessage,
-)}`
+// Monta um link de WhatsApp com uma mensagem pré-preenchida específica
+// (ex: usado nos planos, para o cliente já chegar dizendo qual plano quer).
+export function buildWhatsappLink(message) {
+  return `${siteConfig.whatsapp}?text=${encodeURIComponent(message)}`
+}
+
+// Link padrão do WhatsApp com a mensagem genérica.
+export const whatsappLink = buildWhatsappLink(siteConfig.whatsappMessage)
 
 // Itens de navegação do header (id = âncora da seção).
 export const navItems = [

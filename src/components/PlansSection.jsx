@@ -1,6 +1,6 @@
-import { Check, Star, Crown } from 'lucide-react'
+import { Check, Star, Crown, MessageCircle } from 'lucide-react'
 import { plans } from '../data/plans'
-import { whatsappLink } from '../data/siteConfig'
+import { buildWhatsappLink } from '../data/siteConfig'
 import SectionHeading from './SectionHeading'
 import Reveal from './Reveal'
 
@@ -8,6 +8,13 @@ import Reveal from './Reveal'
 function PlanCard({ plan, index }) {
   const featured = plan.id === 'empresarial-essencial'
   const premium = plan.id === 'empresarial-premium'
+
+  // Os valores não são exibidos na página (conforme normas de publicidade da
+  // advocacia) — são informados diretamente pela equipe via WhatsApp, já
+  // identificando de qual plano o interessado está falando.
+  const planWhatsappLink = buildWhatsappLink(
+    `Olá! Tenho interesse no ${plan.name} da Clínica Geral da Advocacia e gostaria de saber os valores e mais detalhes.`,
+  )
 
   return (
     <Reveal delay={index * 90} className="h-full">
@@ -45,12 +52,19 @@ function PlanCard({ plan, index }) {
           </p>
         </div>
 
-        {/* Preço */}
-        <div className="mb-6 flex items-end gap-1">
-          <span className="font-display text-4xl font-extrabold">{plan.price}</span>
-          <span className={`pb-1.5 text-sm ${featured ? 'text-white/60' : 'text-petrol-500'}`}>
-            {plan.period}
+        {/* Valores informados sob consulta, diretamente pela equipe via WhatsApp */}
+        <div className="mb-6">
+          <span
+            className={`inline-flex items-center gap-2 rounded-full px-3.5 py-2 text-sm font-semibold ${
+              featured ? 'bg-white/10 text-white' : 'bg-petrol-50 text-petrol-700'
+            }`}
+          >
+            <MessageCircle size={15} className={featured ? 'text-gold-400' : 'text-sage-600'} />
+            Valores sob consulta
           </span>
+          <p className={`mt-2 text-xs ${featured ? 'text-white/50' : 'text-petrol-400'}`}>
+            Fale com a nossa equipe pelo WhatsApp para conhecer o investimento deste plano.
+          </p>
         </div>
 
         {/* Benefícios */}
@@ -77,7 +91,7 @@ function PlanCard({ plan, index }) {
 
         {/* CTA */}
         <a
-          href={whatsappLink}
+          href={planWhatsappLink}
           target="_blank"
           rel="noopener noreferrer"
           className={`w-full ${featured ? 'btn-primary' : premium ? 'btn-primary' : 'btn-ghost'}`}
@@ -96,7 +110,7 @@ export default function PlansSection() {
         <SectionHeading
           eyebrow="Planos"
           title="Escolha o plano ideal para você ou sua empresa"
-          subtitle="Comparação simples e transparente. Pessoa física a partir de R$ 99/mês e estruturas empresariais para cada momento do negócio."
+          subtitle="Comparação simples entre os benefícios de cada plano, para pessoa física e para empresas. Os valores são informados diretamente pela nossa equipe via WhatsApp."
         />
 
         <div className="mt-14 grid items-stretch gap-6 md:grid-cols-2 xl:grid-cols-4">
